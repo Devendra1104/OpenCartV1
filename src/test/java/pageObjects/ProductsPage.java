@@ -15,6 +15,8 @@ public class ProductsPage extends BasePage {
 	@FindBy(xpath = "//a[normalize-space()='iMac']")
 	WebElement imacLink;
 	
+	@FindBy(xpath="//p[contains(text(),'There is no product that matches the search criter')]")
+	WebElement searchMsg;
 	
 	//ActionMethods
 	
@@ -28,5 +30,9 @@ public class ProductsPage extends BasePage {
 			System.out.println(e.getMessage());
 			return false;
 		}
+	}
+	
+	public String invalidProdMsg() {
+		return searchMsg.getText();
 	}
 }

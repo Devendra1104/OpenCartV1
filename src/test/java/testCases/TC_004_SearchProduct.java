@@ -9,8 +9,8 @@ import testBase.BaseClass;
 
 public class TC_004_SearchProduct extends BaseClass {
 
-	@Test(groups = {"Sanity"})
-	public void searchProduct() {
+	@Test(priority = 1,groups = {"Sanity"})
+	public void searchValidProduct() {
 		
 		HomePage hp = new HomePage(driver);
 		hp.searchProduct("imac");
@@ -27,6 +27,30 @@ public class TC_004_SearchProduct extends BaseClass {
 		else {
 			Assert.assertEquals(true, false);
 		}
+		
+	}
+	
+	@Test(priority = 2, groups = {"Sanity"})
+	public void searchInvalidProduct() {
+		
+		HomePage hp = new HomePage(driver);
+		hp.searchProduct("fitbit");
+		hp.clickSearchBtn();
+		
+		ProductsPage pd = new ProductsPage(driver);
+		Assert.assertEquals(pd.invalidProdMsg(), "There is no product that matches the search criteria.");
+		
+	}
+	
+	@Test(priority = 3, groups = {"Sanity"})
+	public void searchBlankProduct() {
+		
+		HomePage hp = new HomePage(driver);
+		hp.searchProduct(" ");
+		hp.clickSearchBtn();
+		
+		ProductsPage pd = new ProductsPage(driver);
+		Assert.assertEquals(pd.invalidProdMsg(), "There is no product that matches the search criteria.");
 		
 	}
 }
