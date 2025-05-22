@@ -20,7 +20,6 @@ public class MyAccountPage extends BasePage {
 	WebElement btnLogout;
 	
 	//Actions
-	
 	public boolean confirmMessage() {
 		try {
 		return (confMsg.isDisplayed());

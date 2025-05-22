@@ -10,8 +10,9 @@
 		<parameter name="os" value="windows"/>
 		    <classes>
 			    <!--<class name="testCases.AccountRegistrationTest"/>-->
-			    <class name="testCases.TC_002LoginTest"/>
+			   <!--<class name="testCases.TC_002LoginTest"/>-->
 			    <!-- <class name="testCases.TC_003_loginDDT"/>-->
+			    <class name="testCases.TC_004_SearchProduct"/>
 		    </classes>
 	  </test> <!-- Test -->
 </suite> <!-- Suite -->
